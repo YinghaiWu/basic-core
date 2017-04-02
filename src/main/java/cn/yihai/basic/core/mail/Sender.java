@@ -21,7 +21,7 @@ public class Sender {
 	}
 	
 	public static void main(String[] args) {
-		Email email = Email.BuildDefaultEmail("abc@test.com", "title", "message");
+		Email email = Email.BuildDefaultEmail("abc@test.com","subject", "content");
 		try{
 			send(email, true);
 		}catch(Exception e){

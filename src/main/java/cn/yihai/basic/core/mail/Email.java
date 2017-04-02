@@ -137,16 +137,16 @@ public class Email {
 		this.content = content;
 	}
 
-	public List<String> getAttachFileNames() {
-		return attachFileNames;
-	}
-
 	public String getAttachFileParentPath() {
 		return attachFileParentPath;
 	}
 
 	public void setAttachFileParentPath(String attachFileParentPath) {
 		this.attachFileParentPath = attachFileParentPath;
+	}
+
+	public List<String> getAttachFileNames() {
+		return attachFileNames;
 	}
 
 	public void setAttachFileNames(List<String> attachFileNames) {
@@ -169,8 +169,8 @@ public class Email {
 	 * @param addresses 邮件接收人地址,多个地址用逗号分隔
 	 * @param subject 主题
 	 * @param content 正文
-	 * @param attachFileParentPath 附件文件列表路径 
-	 * @param attachFileNames 附件文件列表路径,多个用逗号分隔
+	 * @param attachFileParentPath 附件列表文件路径 
+	 * @param attachFileNames 附件列表文件名集合
 	 * @return 使用默认发送者的带附件的Email对象
 	 */
 	public static Email BuildAttachmentEmail(String addresses, String subject, String content, String attachFileParentPath, List<String> attachFileNames) {
@@ -183,7 +183,7 @@ public class Email {
 		email.setSubject(subject);
 		email.setContent(content);
 		if (attachFileParentPath != null && !attachFileParentPath.isEmpty()) {
-			email.setAttachFileNames(attachFileNames);
+			email.setAttachFileParentPath(attachFileParentPath);
 		}
 		if (attachFileNames != null && !attachFileNames.isEmpty()) {
 			email.setAttachFileNames(attachFileNames);

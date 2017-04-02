@@ -31,7 +31,7 @@ public class MailSenderInfo {
 	private String userName;
 	
 	/**
-	 * 发送者邮箱密码
+	 * 发送者邮箱密码或者授权码
 	 */
 	private String password;
 	

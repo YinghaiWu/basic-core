@@ -4,6 +4,7 @@ import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 
 public class MyAuthenticator extends Authenticator {
+	
 	String userName = null;
 	String password = null;
 
@@ -18,4 +19,5 @@ public class MyAuthenticator extends Authenticator {
 	protected PasswordAuthentication getPasswordAuthentication() {
 		return new PasswordAuthentication(userName, password);
 	}
+
 }
